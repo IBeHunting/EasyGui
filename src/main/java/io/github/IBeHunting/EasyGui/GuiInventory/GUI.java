@@ -1,6 +1,7 @@
 package io.github.IBeHunting.EasyGui.GuiInventory;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -29,9 +30,9 @@ public class GUI implements InventoryHolder
       this.info = new HashMap<>();
       this.id = "";
       if (isValidSize(size))
-         this.inv = Bukkit.createInventory(this, size, title);
+         this.inv = Bukkit.createInventory(this, size, ChatColor.translateAlternateColorCodes('&', title));
       else
-         this.inv = Bukkit.createInventory(this, 54, title);
+         this.inv = Bukkit.createInventory(this, 54, ChatColor.translateAlternateColorCodes('&', title));
    }
 
    public GUI (int size, String title, GUI previous)
