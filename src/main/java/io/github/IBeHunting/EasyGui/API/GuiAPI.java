@@ -6,6 +6,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class GuiAPI
 {
@@ -41,7 +43,7 @@ public class GuiAPI
       ItemMeta meta = item.getItemMeta();
       if (meta != null)
       {
-         meta.setDisplayName(title);
+         meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', title));
          item.setItemMeta(meta);
       }
       return item;
@@ -49,10 +51,13 @@ public class GuiAPI
 
    public ItemStack addLore (ItemStack item, String ... lore)
    {
+      List<String> final_lore = Arrays.stream(lore).map(
+              line -> ChatColor.translateAlternateColorCodes('&', line)
+      ).collect(Collectors.toList());
       ItemMeta meta = item.getItemMeta();
       if (meta != null)
       {
-         meta.setLore(Arrays.asList(lore));
+         meta.setLore(final_lore);
          item.setItemMeta(meta);
       }
       return item;
