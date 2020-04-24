@@ -1,6 +1,0 @@
-name: EasyGui
-description: An api used to create and manage Inventory GUIs
-author: IBeHunting
-version: 1.0.1
-api-version: 1.15
-main: io.github.IBeHunting.EasyGui.EasyGui
