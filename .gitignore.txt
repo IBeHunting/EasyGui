@@ -1,0 +1,8 @@
+# Intellij Files
+
+.idea/*
+*.iml
+
+# Solution Files
+
+target/*
